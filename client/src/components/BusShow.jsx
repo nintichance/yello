@@ -5,7 +5,10 @@ import { MapContainerStyle } from './styled-components/Containers'
 import { PeopleImages } from './styled-components/Images'
 class BusShow extends Component {
     state={
-        bus: {}
+        bus: {
+            lat: "",
+            lng: ""
+        }
     }
     componentWillMount(){
         this.getOneBus()
@@ -15,12 +18,14 @@ class BusShow extends Component {
         try{
           const res = await axios.get(`/api/buses/${this.props.match.params.bus_id}`)
           const bus = res.data
+          console.log("CALLED", bus)
           this.setState({bus: bus})
         }
         catch(error){
           console.log(error)
         }
       }
+
 render(){
     return(
         <div>

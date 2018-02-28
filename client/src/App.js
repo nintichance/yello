@@ -22,6 +22,17 @@ class App extends Component {
     this.getBuses()
   }
 
+  async getOneBus(bus_id){
+    try{
+      const res = await axios.get(`/api/buses/${bus_id}`)
+      const bus = res.data
+      this.setState({bus: bus})
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
+
 async getParents() {
     try{
       const res = await axios.get('/api/parents')
@@ -71,6 +82,12 @@ async getBuses() {
 
   }
 
+  // addBusToParent(bus){
+  //   newParentObject = parentObject.buses.push(BusObject)
+  //   this.setState({parentObject: newParentObject})
+  // }
+
+
 
 
   render() {
@@ -79,7 +96,7 @@ async getBuses() {
     const BusesComponent = () => (<BusesList buses={this.state.buses}/>)
     const NewParentComponent = () => (<ParentNew addNewParent = {this.addNewParent}/>)
     const ParentShowComponent = (props) => (<ParentShow {...props}/>)
-    const BusShowComponent = (props) => (<BusShow {...props}/>)
+    const BusShowComponent = (props) => (<BusShow getOneBus={this.getOneBus} bus={this.state.bus} {...props}/>)
     return (
       <Router>
         <div>

@@ -13,6 +13,7 @@ const BusesList = (props) => {
                      bus_id={bus.id}
                      driver={bus.driver}
                      description={bus.description}
+                     bus={bus}
                      key={index}/>
         )
     })

@@ -50,7 +50,7 @@ class MapContainer extends Component {
     const location = await navigator.geolocation.getCurrentPosition(this.success, this.error, this.options)
     try {
     } catch (error) {
-      
+      console.log(error)
     }
   }
   componentWillMount() {
@@ -58,7 +58,7 @@ class MapContainer extends Component {
   }
 
   render() {
-    console.log(this.state.lat, this.state.lng)
+    console.log(this.props.lng, parseFloat(this.props.lng))
     const style = {
       width: '100%',
       height: '100%'
@@ -66,10 +66,11 @@ class MapContainer extends Component {
     return (
       <Map google={this.props.google} zoom={14} style={style}
         initialCenter={{
-          lat: this.props.lat,
-          lng: this.props.lng
-          // lat:33.878755,
-          // lng:-84.5060817
+          // lat: this.props.lat,
+          // lng: parseFloat(this.props.lng)
+          lat:parseFloat("33.878755"),
+          lng:parseFloat("-84.5060817")
+          
         }}
         zoom={15}>
         <Marker onClick={this.onMarkerClick}
