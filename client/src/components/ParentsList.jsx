@@ -1,6 +1,6 @@
 import React from 'react'
 import Parents from './Parents'
-
+import NavBar from './NavBar'
 const ParentsList = (props) => {
 
     const parentsList = props.parents.map((parent, index)=>{
@@ -18,6 +18,7 @@ const ParentsList = (props) => {
 
     return(
         <div>
+            <NavBar />
             {parentsList}
         </div>
     )

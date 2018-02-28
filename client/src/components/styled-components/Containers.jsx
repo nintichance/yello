@@ -28,6 +28,7 @@ export const MapContainerStyle = styled.div`
     height: 400vh;
     border-radius: 100%;
 `
-
-
-export default {MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }
+export const ParentsContainer = styled.div`
+    margin: 10vh;
+`
+export default {ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }

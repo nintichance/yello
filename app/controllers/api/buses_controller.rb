@@ -9,10 +9,7 @@ class Api::BusesController < ApplicationController
     end
     def show
         @bus = Bus.find(params[:id])
-        @parents = @bus.parents
-        @trips = @bus.trips
-        @data = {parents: @parents, bus: @bus, trips: @trips}
-        render json: @data
+        render json: @bus
     end
     def update
         @bus = Bus.find(params[:id])

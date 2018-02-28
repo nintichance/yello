@@ -6,6 +6,7 @@ import Home from './components/Home'
 import ParentsList from './components/ParentsList'
 import ParentNew from './components/ParentNew'
 import ParentShow from './components/ParentShow'
+import BusShow from './components/BusShow'
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
@@ -64,6 +65,7 @@ class App extends Component {
     const ParentsComponent = () => (<ParentsList getOneParent={this.getOneParent} parents={this.state.parents} />)
     const NewParentComponent = () => (<ParentNew addNewParent = {this.addNewParent}/>)
     const ParentShowComponent = (props) => (<ParentShow {...props}/>)
+    const BusShowComponent = (props) => (<BusShow {...props}/>)
     return (
       <Router>
         <div>
@@ -72,6 +74,7 @@ class App extends Component {
           <Route exact path="/parents" component={ParentsComponent}/>
           <Route exact path="/parents/new" component={NewParentComponent}/>
           <Route exact path="/parents/:parent_id" component={ParentShowComponent}/>
+          <Route exact path="/buses/:bus_id" component={BusShowComponent}/>
           </Switch>
         </div>
       </Router>

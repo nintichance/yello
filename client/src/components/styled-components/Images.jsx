@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const HomeImages = styled.img `
+export const PeopleImages = styled.img `
 width: 35vw;
 `
 export const CityImage = styled.img`
@@ -57,4 +57,4 @@ export const EditIcon = TrashIcon.extend`
 
 
 
-export default { HomeImages, CityImage, LogoImage, PostIcon, TrashIcon }
+export default { PeopleImages, CityImage, LogoImage, PostIcon, TrashIcon }
