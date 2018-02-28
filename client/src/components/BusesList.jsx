@@ -14,7 +14,8 @@ const BusesList = (props) => {
                      driver={bus.driver}
                      description={bus.description}
                      bus={bus}
-                     key={index}/>
+                     key={index}
+                     updateParentWithBus={props.updateParentWithBus}/>
         )
     })
 
