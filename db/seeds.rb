@@ -47,8 +47,8 @@ micah = Parent.create(
     img: "https://i.imgur.com/AqQrCXI.jpg?1",
     address: "675 Ponce De Leon Ave NE, Atlanta, GA 30308",
     lat: 33.7725173,
-    lng: -84.3659673
-    
+    lng: -84.3659673,
+    username: "micmic"
   )
 
 lula = Parent.create(
@@ -56,7 +56,8 @@ lula = Parent.create(
     img: "https://i.imgur.com/AqQrCXI.jpg?1",
     address: "675 Ponce De Leon Ave NE, Atlanta, GA 30308",
     lat: 33.7725173,
-    lng: -84.3659673
+    lng: -84.3659673,
+    username: "tallulah"
   )
 
 anderson = Parent.create(
@@ -64,7 +65,8 @@ anderson = Parent.create(
     img: "https://i.imgur.com/AqQrCXI.jpg?1",
     address: "675 Ponce De Leon Ave NE, Atlanta, GA 30308",
     lat: 33.7725173,
-    lng: -84.3659673
+    lng: -84.3659673,
+    username: "andycoops"
   )
 
 

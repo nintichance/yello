@@ -3,14 +3,22 @@ import axios from 'axios'
 import MapContainer from './MapContainer'
 import { MapContainerStyle } from './styled-components/Containers'
 import { PeopleImages } from './styled-components/Images'
+import NavBar from './NavBar'
 class ParentShow extends Component {
     state = {
         parent: {
             buses: []
-        }
+        },
+        redirect: false
     }
     componentWillMount() {
         this.getOneParent()
+    }
+
+
+    handleLogin = (parent_id)=>{
+        this.props.logInParent(parent_id)
+        this.setState({redirect: true})
     }
 
     async getOneParent() {
@@ -23,6 +31,20 @@ class ParentShow extends Component {
             console.log(error)
         }
     }
+
+    //ADD A BUS OR EDIT THE PARENT'S PROFILE
+    async updateUser(userId, updatedUser) {
+        try {
+            console.log('EDIT', userId)
+            console.log("UPDATED USEr", updatedUser)
+            await axios.patch(`/api/users/${userId}`, { updatedUser })
+            this.setState({ user: updatedUser })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
     render() {
         return (
             <div>
@@ -30,12 +52,14 @@ class ParentShow extends Component {
                 {this.state.parent.buses.map((bus, index) => {
                     return (
                         <div>
+                            <NavBar />
                             <h1>{bus.id}</h1>
                             <h1>{bus.driver}</h1>
                             <PeopleImages src={bus.img} />
                             <h1>{bus.address}</h1>
                             <div>{bus.driver}</div>
                             <div>{bus.address}</div>
+                            <button onClick={()=>this.handleLogin(this.state.parent.id)}> Login </button>
                         </div>
                     )
                 })}

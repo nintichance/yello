@@ -17,7 +17,7 @@ class App extends Component {
   state = {
     parents: [],
     buses: [],
-    isLoggedIn: false
+    currentParent: {}
   }
 
   componentWillMount(){
@@ -25,13 +25,18 @@ class App extends Component {
     this.getBuses()
   }
 
-  isLoggedIn = () => {
-    if (this.state.isLoggedIn === false){
-      this.setState({isLoggedIn: true})
-    }else{
-      this.setState({isLoggedIn: false})
-    }
-  }
+  // isLoggedIn = () => {
+  //   if (this.state.isLoggedIn === false){
+  //     this.setState({isLoggedIn: true})
+  //   }else{
+  //     this.setState({isLoggedIn: false})
+  //   }
+  // }
+
+logInParent = async(parent_id)=>{
+  const res = await axios.get(`/api/parents/${parent_id}`)
+  this.setState({currentParent: res.data})
+}
 
 async getParents() {
     try{
@@ -95,9 +100,9 @@ async getBuses() {
     const ParentsComponent = () => (<ParentsList parents={this.state.parents} />)
     const BusesComponent = () => (<BusesList buses={this.state.buses}/>)
     const NewParentComponent = () => (<ParentNew addNewParent = {this.addNewParent}/>)
-    const ParentShowComponent = (props) => (<ParentShow {...props}/>)
+    const ParentShowComponent = (props) => (<ParentShow logInParent={this.logInParent} {...props}/>)
     const BusShowComponent = (props) => (<BusShow {...props}/>)
-    const LoginFormComponent = () => (<LoginForm isLoggedIn = {this.isLoggedIn}/>)
+    const LoginFormComponent = () => (<LoginForm />)
 
 
     return (
