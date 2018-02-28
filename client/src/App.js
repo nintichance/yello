@@ -17,7 +17,9 @@ class App extends Component {
   state = {
     parents: [],
     buses: [],
-    currentParent: {}
+    currentParent: {
+      buses: []
+    }
   }
 
   componentWillMount(){
@@ -95,10 +97,20 @@ async getBuses() {
   }
 
   // addBusToParent(bus){
-  //   newParentObject = parentObject.buses.push(BusObject)
-  //   this.setState({parentObject: newParentObject})
+  //   newParentObject = parentObject.buses.push(bus)
+  //   this.setState({currentParent: newParentObject})
   // }
 
+  // updateParentWithBus = async (bus) => {
+  //   newParentObject = parentObject.buses.push(bus)
+  //   await axios.patch(`api/parents/${this.state.currentParent.id}`)
+  // try{
+  //   this.setState({currentParent: newParentObject})
+  // }
+  // catch(error){
+  // console.log(error)
+  //}
+  // }
 
 
 
