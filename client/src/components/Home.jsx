@@ -1,17 +1,14 @@
 import React from 'react'
 import NavBar from './NavBar'
 import { HomeContainer } from './styled-components/Containers'
+import { Link } from 'react-router-dom'
 const Home = () =>{
 
     return(
         <HomeContainer>
             <NavBar/>
-            {/* <div>
-                <img src="https://i.imgur.com/aRtHMp6.png"/>
-            </div>
-            <div>
-                <img src="https://i.imgur.com/aRtHMp6.png"/>
-            </div> */}
+          <Link to="/parents">Parents</Link>
+          <Link to="/buses">Buses</Link>
         </HomeContainer>
 
 

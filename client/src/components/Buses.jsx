@@ -4,17 +4,19 @@ import NavBar from './NavBar'
 import { ParentsContainer } from './styled-components/Containers'
 import { PeopleImages } from './styled-components/Images'
 
-const Parents = (props) => {
-
+const Buses = (props) => {
+console.log("hjhkgh",props.driver)
     return(
         <ParentsContainer>
             <div>
-            <h1>{props.name}</h1>
+                
+            <h1>{props.driver}</h1>
+            <h3>{props.description}</h3>
             <PeopleImages src={props.img}/>
-            <Link to={`/parents/${props.parent_id}`}>View Parent</Link>
+            <Link to={`/buses/${props.bus_id}`}>View Bus</Link>
             </div>
         </ParentsContainer>
     )
 }
 
-export default Parents
+export default Buses

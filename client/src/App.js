@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 import MapContainer from './components/MapContainer'
 import Home from './components/Home'
+import BusesList from './components/BusesList'
 import ParentsList from './components/ParentsList'
 import ParentNew from './components/ParentNew'
 import ParentShow from './components/ParentShow'
@@ -12,18 +13,30 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
   state = {
-    parents: []
+    parents: [],
+    buses: []
   }
 
   componentWillMount(){
     this.getParents()
+    this.getBuses()
   }
 
-  async getParents() {
+async getParents() {
     try{
       const res = await axios.get('/api/parents')
       const parents = res.data
       this.setState({parents: parents})
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+async getBuses() {
+    try{
+      const res = await axios.get('/api/buses')
+      const buses = res.data
+      this.setState({buses: buses})
     }
     catch(err){
       console.log(err)
@@ -62,7 +75,8 @@ class App extends Component {
 
   render() {
 
-    const ParentsComponent = () => (<ParentsList getOneParent={this.getOneParent} parents={this.state.parents} />)
+    const ParentsComponent = () => (<ParentsList parents={this.state.parents} />)
+    const BusesComponent = () => (<BusesList buses={this.state.buses}/>)
     const NewParentComponent = () => (<ParentNew addNewParent = {this.addNewParent}/>)
     const ParentShowComponent = (props) => (<ParentShow {...props}/>)
     const BusShowComponent = (props) => (<BusShow {...props}/>)
@@ -75,6 +89,7 @@ class App extends Component {
           <Route exact path="/parents/new" component={NewParentComponent}/>
           <Route exact path="/parents/:parent_id" component={ParentShowComponent}/>
           <Route exact path="/buses/:bus_id" component={BusShowComponent}/>
+          <Route exact path="/buses" component={BusesComponent}/>
           </Switch>
         </div>
       </Router>

@@ -11,7 +11,6 @@ const ParentsList = (props) => {
                      lat={parent.lat}
                      lng={parent.lng}
                      parent_id={parent.id}
-                     getOneParent={props.getOneParent}
                      key={index}/>
         )
     })
