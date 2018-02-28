@@ -96,28 +96,24 @@ async getBuses() {
 
   }
 
-  // addBusToParent(bus){
-  //   newParentObject = parentObject.buses.push(bus)
-  //   this.setState({currentParent: newParentObject})
-  // }
 
-  // updateParentWithBus = async (bus) => {
-  //   newParentObject = parentObject.buses.push(bus)
-  //   await axios.patch(`api/parents/${this.state.currentParent.id}`)
-  // try{
-  //   this.setState({currentParent: newParentObject})
-  // }
-  // catch(error){
-  // console.log(error)
-  //}
-  // }
-
-
+//UPDATE PARENT OBJECT WITH NEW BUS IN BUSES ARRAY
+  updateParentWithBus = async (bus) => {
+    try{
+    newParentObject = parentObject.buses.push(bus)
+    await axios.patch(`api/parents/${this.state.currentParent.id}`, { newParentObject })
+    this.setState({currentParent: newParentObject})
+  }
+  catch(error){
+  console.log(error)
+  }
+  }
 
   render() {
 
     const ParentsComponent = () => (<ParentsList parents={this.state.parents} />)
-    const BusesComponent = () => (<BusesList buses={this.state.buses}/>)
+    //PASS UPDATEPARENTWITHBUS TO BUSESLIST
+    const BusesComponent = () => (<BusesList updateParentWithBus={this.updateParentWithBus} buses={this.state.buses}/>)
     const NewParentComponent = () => (<ParentNew addNewParent = {this.addNewParent}/>)
     const ParentShowComponent = (props) => (<ParentShow logInParent={this.logInParent} {...props}/>)
     const BusShowComponent = (props) => (<BusShow {...props}/>)
