@@ -23,25 +23,30 @@ class LoginForm extends Component {
     event.preventDefault()
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    axios.get(`/api/users/retrieve/${this.state.username}`)
-      .then((res) => {
-        if(res.data) {
-          console.log(res.data[0].id)
-          localStorage.setItem("userId", res.data[0].id)
-          this.setState({login: true})
-        }
+  handleLogin = (username)=>{
+    this.props.logInParent(username)
+    this.setState({login: true})
+}
+
+//   handleSubmit = (event) => {
+//     event.preventDefault()
+//     axios.get(`/api/parents/retrieve/${this.state.username}`)
+//       .then((res) => {
+//         if(res.data) {
+//           console.log(res.data[0].id)
+//           localStorage.setItem("userId", res.data[0].id)
+//           this.setState({login: true, })
+//         }
         
       
-      })
-      .catch((error) => {console.log(error)})  
-  }
+//       })
+//       .catch((error) => {console.log(error)})  
+//   }
 
   render() {
 
     if (this.state.login === true) {
-      this.props.isLoggedIn()
+    //   this.state.isLoggedIn()
       return (<Redirect to="/" />)   
     }
 
@@ -53,7 +58,7 @@ class LoginForm extends Component {
             Welcome to Yello
           </UserFormHeader>
 
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={() => this.handleLogin(this.state.username)}>
             <UserFormInput
               name="username"
               type="text"

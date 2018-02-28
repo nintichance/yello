@@ -33,9 +33,16 @@ class App extends Component {
   //   }
   // }
 
-logInParent = async(parent_id)=>{
-  const res = await axios.get(`/api/parents/${parent_id}`)
-  this.setState({currentParent: res.data})
+logInParent = async(username)=>{
+  try{
+  const res = await axios.get(`/api/parents/retrieve/${username}`)
+  console.log("CALLED", res.data[0] )
+  this.setState({currentParent: res.data[0]})
+  }
+  catch(error){
+    console.log(error)
+  }
+  
 }
 
 async getParents() {
@@ -102,7 +109,7 @@ async getBuses() {
     const NewParentComponent = () => (<ParentNew addNewParent = {this.addNewParent}/>)
     const ParentShowComponent = (props) => (<ParentShow logInParent={this.logInParent} {...props}/>)
     const BusShowComponent = (props) => (<BusShow {...props}/>)
-    const LoginFormComponent = () => (<LoginForm />)
+    const LoginFormComponent = () => (<LoginForm logInParent={this.logInParent}/>)
 
 
     return (

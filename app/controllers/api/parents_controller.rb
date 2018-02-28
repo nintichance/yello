@@ -25,10 +25,10 @@ class Api::ParentsController < ApplicationController
         render status: :ok
     end
     def retrieve
-        @existing_user = Parent.where(username: params[:username])
-        puts @existing_user
-        render json: @existing_user
-      end    
+        @existing_parent = Parent.where(username: params[:username])
+        puts @existing_parent
+        render json: @existing_parent
+    end    
     def parent_params
         params.require(:parent).permit(:name, :lat, :lng, :address, :img, :driver, :description)
     end
