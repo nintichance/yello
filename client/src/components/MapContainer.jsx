@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react'
 import ReactDOM from 'react-dom'
+import NavBar from './NavBar'
 
 class MapContainer extends Component {
 
@@ -65,8 +66,8 @@ class MapContainer extends Component {
     return (
       <Map google={this.props.google} zoom={14} style={style}
         initialCenter={{
-          lat: this.state.lat,
-          lng: this.state.lng
+          lat: this.props.lat,
+          lng: this.props.lng
           // lat:33.878755,
           // lng:-84.5060817
         }}
@@ -75,6 +76,7 @@ class MapContainer extends Component {
           name={'Current location'} />
 
       </Map>
+
     )
 
   }

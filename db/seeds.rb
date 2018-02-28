@@ -69,5 +69,6 @@ anderson = Parent.create(
 
 
   Trip.create(bus: bus_one, parent: micah)
+  Trip.create(bus: bus_two, parent: micah)
   Trip.create(bus: bus_two, parent: lula)
   Trip.create(bus: bus_three, parent: anderson)

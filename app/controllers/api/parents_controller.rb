@@ -9,10 +9,9 @@ class Api::ParentsController < ApplicationController
     end
     def show
         @parent = Parent.find(params[:id])
-        @buses = @parent.buses
-        @trips = @parent.trips
-        @data = {parent: @parent, buses: @buses, trips: @trips}
-        render json: @data
+        # @buses = @parent.buses
+        # @data = {parent: @parent, buses: @buses}
+        render json: @parent
     end
     def update
         @parent = Parent.find(params[:id])
@@ -26,7 +25,7 @@ class Api::ParentsController < ApplicationController
         render status: :ok
     end
     def parent_params
-        params.require(:parent).permit(:lat, :lng, :address, :img, :driver, :description)
+        params.require(:parent).permit(:name, :lat, :lng, :address, :img, :driver, :description)
     end
 end
 # class Api::InvestmentsController < ApplicationController
