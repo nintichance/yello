@@ -16,8 +16,8 @@ const NavBar = (props) => {
             
             </LogOutContainer> : */}
             <div>
-            <Link to="parents/new">New Parent</Link>
-                Login
+            <Link to="parents/new">Sign Up</Link>
+                <Link to="/login">Login</Link>
             </div>
             {/* } */}
         </Nav>

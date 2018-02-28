@@ -5,16 +5,11 @@ import NavBar from './NavBar'
 
 class MapContainer extends Component {
 
-  state = {
-    lat: "",
-    lng: ""
-  }
-
-  options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-  }
+  // options = {
+  //   enableHighAccuracy: true,
+  //   timeout: 5000,
+  //   maximumAge: 0
+  // }
 
 // getGeoCode = async() => {
 //   const geoCode = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
@@ -30,35 +25,42 @@ class MapContainer extends Component {
 //     console.log(err)
 //   }
 // }
-  success = (pos) => {
-    const crd = pos.coords
+  // success = (pos) => {
+  //   const crd = pos.coords
 
-    console.log('Your current position is:')
-    console.log(pos)
-    console.log(`Latitude : ${crd.latitude}`)
-    console.log(`Longitude: ${crd.longitude}`)
-    console.log(`More or less ${crd.accuracy} meters.`)
+  //   console.log('Your current position is:')
+  //   console.log(pos)
+  //   console.log(`Latitude : ${crd.latitude}`)
+  //   console.log(`Longitude: ${crd.longitude}`)
+  //   console.log(`More or less ${crd.accuracy} meters.`)
 
-    this.setState({lat:crd.latitude, lng:crd.longitude})
-  }
+  //   this.setState({lat:crd.latitude, lng:crd.longitude})
+  // }
 
-  error = (err) => {
-    console.log(`ERROR(${err.code}): ${err.message}`)
-  }
-  getLocation = async() => {
+  // error = (err) => {
+  //   console.log(`ERROR(${err.code}): ${err.message}`)
+  // }
+  // getLocation = async() => {
 
-    const location = await navigator.geolocation.getCurrentPosition(this.success, this.error, this.options)
-    try {
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //   const location = await navigator.geolocation.getCurrentPosition(this.success, this.error, this.options)
+  //   try {
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
   componentWillMount() {
-    navigator.geolocation.getCurrentPosition(this.success, this.error, this.options)
+    // navigator.geolocation.getCurrentPosition(this.success, this.error, this.options)
   }
 
   render() {
-    console.log(this.props.lng, parseFloat(this.props.lng))
+    if (this.props.lat == "" || this.props.lng == "") {
+      console.log("Not loaded")
+      return (
+        <div>Not loaded yet</div>
+      )
+    }
+    console.log("*************Loaded:", this.props.lng, parseFloat(this.props.lng))
+    const lng = parseFloat(this.props.lng)
     const style = {
       width: '100%',
       height: '100%'
@@ -66,15 +68,17 @@ class MapContainer extends Component {
     return (
       <Map google={this.props.google} zoom={14} style={style}
         initialCenter={{
-          // lat: this.props.lat,
-          // lng: parseFloat(this.props.lng)
-          lat:parseFloat("33.878755"),
-          lng:parseFloat("-84.5060817")
+          lat: parseFloat(this.props.lat),
+          lng: parseFloat(this.props.lng),
+          icon: "https://i.imgur.com/FuM0Drp.png"
+          // lat:parseFloat("33.878755"),
+          // lng:parseFloat("-84.5060817")
           
         }}
-        zoom={15}>
+        zoom={20}>
         <Marker onClick={this.onMarkerClick}
-          name={'Current location'} />
+          name={'Current location'} 
+          />
 
       </Map>
 

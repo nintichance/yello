@@ -8,13 +8,16 @@ import ParentsList from './components/ParentsList'
 import ParentNew from './components/ParentNew'
 import ParentShow from './components/ParentShow'
 import BusShow from './components/BusShow'
+import LoginForm from './components/LoginForm'
+
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
   state = {
     parents: [],
-    buses: []
+    buses: [],
+    isLoggedIn: false
   }
 
   componentWillMount(){
@@ -22,14 +25,11 @@ class App extends Component {
     this.getBuses()
   }
 
-  async getOneBus(bus_id){
-    try{
-      const res = await axios.get(`/api/buses/${bus_id}`)
-      const bus = res.data
-      this.setState({bus: bus})
-    }
-    catch(error){
-      console.log(error)
+  isLoggedIn = () => {
+    if (this.state.isLoggedIn === false){
+      this.setState({isLoggedIn: true})
+    }else{
+      this.setState({isLoggedIn: false})
     }
   }
 
@@ -96,7 +96,10 @@ async getBuses() {
     const BusesComponent = () => (<BusesList buses={this.state.buses}/>)
     const NewParentComponent = () => (<ParentNew addNewParent = {this.addNewParent}/>)
     const ParentShowComponent = (props) => (<ParentShow {...props}/>)
-    const BusShowComponent = (props) => (<BusShow getOneBus={this.getOneBus} bus={this.state.bus} {...props}/>)
+    const BusShowComponent = (props) => (<BusShow {...props}/>)
+    const LoginFormComponent = () => (<LoginForm isLoggedIn = {this.isLoggedIn}/>)
+
+
     return (
       <Router>
         <div>
@@ -107,6 +110,7 @@ async getBuses() {
           <Route exact path="/parents/:parent_id" component={ParentShowComponent}/>
           <Route exact path="/buses/:bus_id" component={BusShowComponent}/>
           <Route exact path="/buses" component={BusesComponent}/>
+          <Route exact path="/login" component={LoginFormComponent} />
           </Switch>
         </div>
       </Router>

@@ -16,8 +16,8 @@ ActiveRecord::Base.connection.tables.each do |t|
 end 
 
 bus_one = Bus.create(
-  lat: 33.7491288,
-  lng: -84.361924,
+  lat: "33.7491288",
+  lng: "-84.361924",
   address: "200 Pearl St SE, Atlanta, GA 30316, USA",
   driver: "driver",
   img: "https://i.imgur.com/V8Jxe3D.jpg",
@@ -25,8 +25,8 @@ bus_one = Bus.create(
   )
 
 bus_two = Bus.create(
-  lat: 33.7491288,
-  lng: -84.361924,
+  lat: "33.7491288",
+  lng: "-84.361924",
   address: "200 Pearl St SE, Atlanta, GA 30316, USA",
   driver: "driver",
   img: "https://i.imgur.com/V8Jxe3D.jpg",
@@ -34,8 +34,8 @@ bus_two = Bus.create(
   )
 
 bus_three = Bus.create(
-  lat: 33.7491288,
-  lng: -84.361924,
+  lat: "33.7491288",
+  lng: "-84.361924",
   address: "200 Pearl St SE, Atlanta, GA 30316, USA",
   driver: "driver",
   img: "https://i.imgur.com/V8Jxe3D.jpg",

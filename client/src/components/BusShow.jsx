@@ -31,6 +31,8 @@ render(){
         <div>
                     <div>
                         <h1>{this.state.bus.id}</h1>
+                        <h1>{this.state.bus.lat}</h1>
+                        <h1>{this.state.bus.lng}</h1>
                         <MapContainerStyle>
                             <MapContainer lat={this.state.bus.lat} lng={this.state.bus.lng}/>
                         </MapContainerStyle>
