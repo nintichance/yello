@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Redirect} from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import {
   LoginWrapper,
@@ -12,9 +12,9 @@ import {
 
 
 
-class DriverLogin extends Component {
+class LoginForm extends Component {
   state = {
-    driver_username: "",
+    driverUsername: "",
     login : false
   }
 
@@ -23,12 +23,10 @@ class DriverLogin extends Component {
     event.preventDefault()
   }
 
-  handleLogin = (driver_username)=>{
-    this.props.logInDriver(driver_username)
+  handleLogin = (driverUsername)=>{
+    this.props.logInDriver(driverUsername)
     this.setState({login: true})
 }
-
-
 
   render() {
 
@@ -41,7 +39,7 @@ class DriverLogin extends Component {
       <LoginWrapper>
         <UserFormBody>
           <UserFormHeader>
-            Welcome Drivers!
+            Welcome Parents
           </UserFormHeader>
 
           <form onSubmit={() => this.handleLogin(this.state.driver_username)}>
@@ -49,12 +47,14 @@ class DriverLogin extends Component {
               name="username"
               type="text"
               placeholder="enter username"
-              value={this.state.driver_username}
+              //CAUSING CHANGE TO NOT HAPPEN
+            //   value={this.state.driverUsername}
               onChange={this.handleChange}/>
             <br/>
             <UserFormButton>
               <GlobalFormInputButton className="input-button" type="submit" value="login"/>
             </UserFormButton>
+            <Link to="/login"><UserFormButton>Login as Parent</UserFormButton></Link>
           </form>
 
         </UserFormBody>
@@ -63,4 +63,4 @@ class DriverLogin extends Component {
   }
 }
 
-export default DriverLogin
+export default LoginForm
