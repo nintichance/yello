@@ -63,7 +63,7 @@ class MapContainer extends Component {
       height: '100%'
     }
     return (
-      <Map google={this.props.google} zoom={14} style={style}
+      <Map google={this.props.google} style={style}
         initialCenter={{
           lat: parseFloat(this.props.lat),
           lng: parseFloat(this.props.lng),
@@ -72,7 +72,7 @@ class MapContainer extends Component {
           // lng:parseFloat("-84.5060817")
           
         }}
-        zoom={20}>
+        zoom={17}>
         <Marker onClick={this.onMarkerClick}
           name={'Current location'} 
           />
