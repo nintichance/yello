@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import MapContainer from './MapContainer'
 import { MapContainerStyle } from './styled-components/Containers'
-
+import NavBar from './NavBar'
 class BusShow extends Component {
     state = {
         bus: {
@@ -29,6 +29,7 @@ class BusShow extends Component {
     render() {
         return (
             <div>
+                <NavBar />
                 <MapContainer lat={this.state.bus.lat} lng={this.state.bus.lng} />
             </div>
         )

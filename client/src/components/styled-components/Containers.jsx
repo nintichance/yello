@@ -44,6 +44,7 @@ align-items: center;
 height: 7vh;
 margin-bottom: 25px;
 background-color: #1b1b1b;
+z-index: 1;
 a{
     text-decoration: none;
     color: white;
