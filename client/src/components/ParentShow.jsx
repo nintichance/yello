@@ -3,6 +3,7 @@ import axios from 'axios'
 import { PeopleImages } from './styled-components/Images'
 import NavBar from './NavBar'
 import ParentEdit from './ParentEdit'
+import { Link } from 'react-router-dom'
 class ParentShow extends Component {
     state = {
         parent: {
@@ -50,19 +51,19 @@ class ParentShow extends Component {
 
 //UPDATE PARENT OBJECT WITH ONE LESS BUS IN BUSES ARRAY
 //API NOT FOUND
-deleteBusFromParent = async (index, bus) => {
-    const parent = {...this.state.parent}
-    console.log("State", this.state.parent)
-    try{
-    parent.buses.slice(index)
-    console.log("RIGHTHERE", parent)
-    await axios.patch(`api/parents/${this.state.parent.id}/buses/${bus.id}`, { parent: parent })
-    this.setState({currentParent: parent})
-  }
-  catch(error){
-  console.log(error)
-  }
-  }
+// deleteBusFromParent = async (index, bus) => {
+//     const parent = {...this.state.parent}
+//     console.log("HEYORIVER", this.state.parent)
+//     try{
+//     parent.buses.slice(index, 1)
+//     console.log("RIGHTHERE", parent)
+//     await axios.patch(`/api/parents/${this.state.parent.id}/buses/${bus.id}`, { parent: parent })
+//     this.setState({parent: parent})
+//   }
+//   catch(error){
+//   console.log(error)
+//   }
+//   }
 
     render() {
         return (
@@ -81,6 +82,7 @@ deleteBusFromParent = async (index, bus) => {
                             <h1>{bus.address}</h1>
                             <div>{bus.driver}</div>
                             <div>{bus.address}</div>
+                            <Link to={`/buses/${bus.id}`}>See Map</Link>
                             <button onClick={()=>this.deleteBusFromParent(index, bus)}> Remove Bus </button>
                         </div>
                     )

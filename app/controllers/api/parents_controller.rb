@@ -25,7 +25,7 @@ class Api::ParentsController < ApplicationController
     end
 
     def destroy
-        @parent = Parent.find(params[:id]).delete
+        @parent = Parent.find(params[:id]).destroy
 
         render status: :ok
     end
