@@ -67,14 +67,14 @@ class MapContainer extends Component {
         initialCenter={{
           lat: parseFloat(this.props.lat),
           lng: parseFloat(this.props.lng),
-          icon: "https://i.imgur.com/FuM0Drp.png"
           // lat:parseFloat("33.878755"),
           // lng:parseFloat("-84.5060817")
           
         }}
         zoom={17}>
         <Marker onClick={this.onMarkerClick}
-          name={'Current location'} 
+          name={'Current location'}
+          icon= "https://i.imgur.com/FuM0Drp.png?1"
           />
 
       </Map>
