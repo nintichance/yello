@@ -100,8 +100,9 @@ async getBuses() {
 //UPDATE PARENT OBJECT WITH NEW BUS IN BUSES ARRAY
   updateParentWithBus = async (bus) => {
     try{
-    nowParent = {...currentParent}
-    newParentObject = nowParent.buses.push(bus)
+    const nowParent = {...this.state.currentParent}
+    const newParentObject = nowParent.buses.push(bus)
+    console.log("RIGHTHERE", nowParent.buses)
     await axios.patch(`api/parents/${this.state.currentParent.id}`, { newParentObject })
     this.setState({currentParent: newParentObject})
   }
