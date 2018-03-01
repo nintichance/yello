@@ -72,7 +72,7 @@ class MapContainer extends Component {
           
         }}
         zoom={17}>
-        <Marker onClick={this.onMarkerClick}
+        <Marker 
           name={'Current location'}
           icon= "https://i.imgur.com/FuM0Drp.png?1"
           />

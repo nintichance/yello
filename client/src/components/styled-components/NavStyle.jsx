@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const Nav = styled.div`
     width: 100vw;
     position: fixed;        
@@ -38,16 +37,21 @@ export const NavItems = styled.div`
         margin: 10px;
     }
 `
-
+export const Footers = styled.div`
+    width: 100vw;
+    background-color: white;
+    z-index: 1;
+    height: 7vh;
+    margin-top: 93vh;
+`
 export const FooterStyle = styled.div`
     width: 100vw;
-    position: fixed;        
-    color: rgb(0, 0, 0);
-    top: 0;
-    left: 0;
+    background-color: white;
+    z-index: 1;
+    height: 7vh;
+    margin-top: 93vh;
     display: flex;
     justify-content: space-between;
-    background-color: yellow;
     align-items: center;
     height: 10vh;
     margin-bottom: 25px;
@@ -73,5 +77,5 @@ export const FooterStyle = styled.div`
 `
 
 export default {
-   FooterStyle, Nav, NavItems
+    Footers, FooterStyle, Nav, NavItems
 }

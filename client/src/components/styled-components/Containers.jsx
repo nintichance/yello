@@ -34,7 +34,8 @@ export const ParentsContainer = styled.div`
 
 export const NavDiv = styled.div`
 width: 100vw;
-position: fixed;        
+position: fixed;  
+flex: 1 0 auto;      
 color: rgb(0, 0, 0);
 top: 0;
 left: 0;
@@ -54,4 +55,9 @@ a{
     text-shadow: 1px 1px rgba(0,0,0, 0.1);
 }
 `
-export default {NavDiv, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }
+
+export const BusShowContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+export default {BusShowContainer, NavDiv, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }

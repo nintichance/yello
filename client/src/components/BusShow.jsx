@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import MapContainer from './MapContainer'
-import { MapContainerStyle } from './styled-components/Containers'
+import { MapContainerStyle, BusShowContainer } from './styled-components/Containers'
+import Footer from './Footer'
 import NavBar from './NavBar'
+import styled from 'styled-components'
+
 class BusShow extends Component {
     state = {
         bus: {
@@ -28,11 +31,13 @@ class BusShow extends Component {
 
     render() {
         return (
-            <div>
+            <BusShowContainer>
                 <NavBar />
                 <MapContainer lat={this.state.bus.lat} lng={this.state.bus.lng} />
-            </div>
+                <Footer />
+            </BusShowContainer>
         )
     }
 }
 export default BusShow
+
