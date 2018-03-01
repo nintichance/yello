@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import MapContainer from './MapContainer'
-import { MapContainerStyle } from './styled-components/Containers'
 import { PeopleImages } from './styled-components/Images'
 import NavBar from './NavBar'
 import ParentEdit from './ParentEdit'
 class ParentShow extends Component {
     state = {
         parent: {
+            name: "",
             buses: []
         },
-        redirect: false
+        redirect: false,
+        showEdit: false,
     }
+
     componentWillMount() {
         this.getOneParent()
+        this.updateUser = this.updateParent.bind(this)
     }
 
 
@@ -33,23 +35,26 @@ class ParentShow extends Component {
         }
     }
 
-    //ADD A BUS OR EDIT THE PARENT'S PROFILE
-    async updateUser(userId, updatedUser) {
+    //UPDATE A PARENT'S INFORMATION
+    async updateParent(parentId, updatedParent) {
         try {
-            console.log('EDIT', userId)
-            console.log("UPDATED USEr", updatedUser)
-            await axios.patch(`/api/users/${userId}`, { updatedUser })
-            this.setState({ user: updatedUser })
+            console.log('EDIT', parentId)
+            console.log("UPDATED USEr", updatedParent)
+            await axios.patch(`/api/parents/${parentId}`, { parent: updatedParent })
+            this.setState({ parent: updatedParent })
         }
         catch (err) {
             console.log(err)
         }
     }
 
+
     render() {
         return (
+          
             <div>
-                <ParentEdit/>
+                {/* {this.state.showEdit ? <ParentEdit parentId={this.state.parent.id} parent = {this.state.parent}/> : */}
+                <ParentEdit updateParent={this.updateParent} parentId={this.state.parent.id} parent = {this.state.parent}/>
                 <h1>{this.state.parent.name}</h1>
                 {this.state.parent.buses.map((bus, index) => {
                     return (
@@ -65,7 +70,10 @@ class ParentShow extends Component {
                         </div>
                     )
                 })}
+             {/* } */}
+            
             </div>
+            
         )
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { InputAndButtonContainer, ButtonContainer, TextArea, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton } from './styled-components/Form'
+import { FormWrapper, FormHeader, FormBody, FormField, FormInput, FormButton, FormInputButton } from './styled-components/Form'
 import { Link, Redirect } from 'react-router-dom'
-import axios from 'axios'
+
 class NewParent extends Component {
     state = {
         newParent: {},

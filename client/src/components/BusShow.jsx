@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import MapContainer from './MapContainer'
 import { MapContainerStyle } from './styled-components/Containers'
-import { PeopleImages } from './styled-components/Images'
+
 class BusShow extends Component {
     state={
         bus: {

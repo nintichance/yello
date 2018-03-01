@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react'
-import ReactDOM from 'react-dom'
-import NavBar from './NavBar'
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react'
+// import ReactDOM from 'react-dom'
 
 class MapContainer extends Component {
 
@@ -53,14 +52,12 @@ class MapContainer extends Component {
   }
 
   render() {
-    if (this.props.lat == "" || this.props.lng == "") {
+    if (this.props.lat === "" || this.props.lng === "") {
       console.log("Not loaded")
       return (
         <div>Not loaded yet</div>
       )
     }
-    console.log("*************Loaded:", this.props.lng, parseFloat(this.props.lng))
-    const lng = parseFloat(this.props.lng)
     const style = {
       width: '100%',
       height: '100%'

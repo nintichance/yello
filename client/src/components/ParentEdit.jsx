@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 
-import { UserFormContainer } from './styled-components/Containers'
 import { FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton} from './styled-components/Form'
 
-import axios from 'axios'
 
-class UserEdit extends Component {
+class ParentEdit extends Component {
     constructor(props) {
         super(props)
         this.defaultState = {
-            updatedUser: {
-                firstName: 'Eric',
-                lastName: 'Lu',
-                img: 'https://i.imgur.com/KIiCMv3.jpg'
+            updatedParent: {
+                name: " ",
+                username: " ",
+                address: " ",
+                lat: " ",
+                lng: " ",
+                img: " "
             },
             redirect: false
         }
@@ -22,77 +23,82 @@ class UserEdit extends Component {
     handleInputChange = (event) => {
         const attribute = event.target.name
         let value = event.target.value
-        const updatedUser = {...this.state.updatedUser}
-        updatedUser[attribute] = value
-        this.setState({updatedUser})
+        const updatedParent = {...this.state.updatedParent}
+        updatedParent[attribute] = value
+        this.setState({updatedParent})
     }
 
     resetForm = () => {
-        const updatedUser = {...this.defaultState.updatedUser}
-        this.setState({updatedUser, redirect: true})
+        const updatedParent = {...this.defaultState.updatedParent}
+        this.setState({updatedParent, redirect: true})
     }
 
-    updateUser = (event) =>{
+    updateParent = (event) =>{
         event.preventDefault()
-        this.props.updateUser(this.props.userId, this.state.updatedUser)
+        this.props.updateParent(this.props.parent.id, this.state.updatedParent)
         this.resetForm()
-        this.setState({redirctToUser: true})
+        this.setState({redirctToParent: true})
     }
 
 
 
     render() {
+        console.log(this.props.parent.name)
         return (
             <div>
-
-                Hello from UserEdit
-                {/* {this.state.redirect ? <Redirect to={`/users`}>Users</Redirect> :
+                {this.state.redirect ? <Redirect to={`/parents`}>Parents</Redirect> :
                 <FormWrapper>
-                      <FormBody onSubmit={this.updateUser}>
+                      <FormBody onSubmit={this.updateParent}>
                     <FormField>
                         <FormHeader>
-                            <FormHeading>Edit User</FormHeading>
+                            <FormHeading>Edit Parent</FormHeading>
                         </FormHeader>
                         <FormInput
                             type="string"
-                            name="firstName"
-                            placeholder={this.props.user.firstName}
+                            name="name"
+                            placeholder={this.props.parent.name}
                             onChange={this.handleInputChange} 
-                            value={this.state.updatedUser.firstName}/>
+                            value={this.state.updatedParent.name}/>
                     </FormField>
-
                     <FormField>
-                        
                         <FormInput
                             type="string"
-                            name="lastName"
-                            placeholder={this.props.user.lastName}
+                            name="username"
+                            placeholder={this.props.parent.username}
                             onChange={this.handleInputChange} 
-                            value={this.state.updatedUser.lastName}/>
+                            value={this.state.updatedParent.username}/>
                     </FormField>
                     <FormField>
                         <FormInput
                             type="string"
                             name="img"
-                            placeholder={this.props.user.img}
+                            placeholder={this.props.parent.img}
                             onChange={this.handleInputChange} 
-                            value={this.state.updatedUser.img} />
+                            value={this.state.updatedParent.img} />
+                    </FormField>
+                    <FormField>
+                        <FormInput
+                            type="string"
+                            name="address"
+                            placeholder={this.props.parent.address}
+                            onChange={this.handleInputChange} 
+                            value={this.state.updatedParent.address} />
                     </FormField>
                     <FormField>
                         <FormInputButton
                             type="submit"
-                            value="Update User" />
+                            value="Update Parent" />
                     </FormField>
                     <FormField>
-                    <FormButton><Link to="/users">Back</Link></FormButton>
+                    <FormButton><Link to="/parents">Back</Link></FormButton>
                     </FormField>
                 </FormBody>
                 </FormWrapper>
-                } */}
+                }
             </div>
         )
 
     }
 }
 
-export default UserEdit
+export default ParentEdit

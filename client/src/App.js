@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
-import MapContainer from './components/MapContainer'
 import Home from './components/Home'
 import BusesList from './components/BusesList'
 import ParentsList from './components/ParentsList'

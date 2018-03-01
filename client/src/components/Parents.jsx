@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import NavBar from './NavBar'
 import { ParentsContainer } from './styled-components/Containers'
 import { PeopleImages } from './styled-components/Images'
 

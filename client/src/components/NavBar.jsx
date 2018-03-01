@@ -1,9 +1,7 @@
 import React from 'react'
-import { Nav, NavItems } from './styled-components/NavStyle'
-import { LogoImage, PostIcon } from './styled-components/Images'
-import { LogOutButton } from './styled-components/Form'
+import { LogoImage } from './styled-components/Images'
 import { Link } from 'react-router-dom'
-import { LogOutContainer, NavDiv } from './styled-components/Containers'
+import { NavDiv } from './styled-components/Containers'
 
 const NavBar = (props) => {
     return (
