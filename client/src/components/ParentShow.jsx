@@ -49,6 +49,10 @@ class ParentShow extends Component {
         }
     }
 
+showEdit = () => {
+    this.setState({showEdit: true})
+}
+
 //UPDATE PARENT OBJECT WITH ONE LESS BUS IN BUSES ARRAY
 //API NOT FOUND
 // deleteBusFromParent = async (index, bus) => {
@@ -66,29 +70,31 @@ class ParentShow extends Component {
 //   }
 
     render() {
+
+        const thing = this.state.parent.buses.map((bus, index) => {
+            return (
+                <div>
+                    <NavBar />
+                    <h1>{this.state.parent.name}</h1>
+                    <h1>{bus.id}</h1>
+                    <h1>{bus.driver}</h1>
+                    <PeopleImages src={bus.img} />
+                    <h1>{bus.address}</h1>
+                    <div>{bus.driver}</div>
+                    <div>{bus.address}</div>
+                    <Link to={`/buses/${bus.id}`}>See Map</Link>
+                    <button onClick={()=>{this.showEdit()}}>Edit</button>
+                    <button onClick={()=>this.deleteBusFromParent(index, bus)}> Remove Bus </button>
+                </div>
+            )
+        })
+
         return (
           
             <div>
-                {/* {this.state.showEdit ? <ParentEdit parentId={this.state.parent.id} parent = {this.state.parent}/> : */}
-                <ParentEdit updateParent={this.updateParent} parentId={this.state.parent.id} parent = {this.state.parent}/>
-                <h1>{this.state.parent.name}</h1>
-                {this.state.parent.buses.map((bus, index) => {
-                    return (
-                        <div>
-                            <NavBar />
-                            <h1>{bus.id}</h1>
-                            <h1>{bus.driver}</h1>
-                            <PeopleImages src={bus.img} />
-                            <h1>{bus.address}</h1>
-                            <div>{bus.driver}</div>
-                            <div>{bus.address}</div>
-                            <Link to={`/buses/${bus.id}`}>See Map</Link>
-                            <button onClick={()=>this.deleteBusFromParent(index, bus)}> Remove Bus </button>
-                        </div>
-                    )
-                })}
-             {/* } */}
-            
+                {this.state.showEdit ? 
+                 <ParentEdit updateParent={this.updateParent} parentId={this.state.parent.id} parent = {this.state.parent}/> : 
+                 thing}                 
             </div>
             
         )
