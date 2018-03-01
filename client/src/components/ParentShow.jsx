@@ -48,6 +48,21 @@ class ParentShow extends Component {
         }
     }
 
+//UPDATE PARENT OBJECT WITH ONE LESS BUS IN BUSES ARRAY
+//API NOT FOUND
+deleteBusFromParent = async (index, bus) => {
+    const parent = {...this.state.parent}
+    console.log("State", this.state.parent)
+    try{
+    parent.buses.slice(index)
+    console.log("RIGHTHERE", parent)
+    await axios.patch(`api/parents/${this.state.parent.id}/buses/${bus.id}`, { parent: parent })
+    this.setState({currentParent: parent})
+  }
+  catch(error){
+  console.log(error)
+  }
+  }
 
     render() {
         return (
@@ -66,7 +81,7 @@ class ParentShow extends Component {
                             <h1>{bus.address}</h1>
                             <div>{bus.driver}</div>
                             <div>{bus.address}</div>
-                            <button onClick={()=>this.handleLogin(this.state.parent.id)}> Login </button>
+                            <button onClick={()=>this.deleteBusFromParent(index, bus)}> Remove Bus </button>
                         </div>
                     )
                 })}

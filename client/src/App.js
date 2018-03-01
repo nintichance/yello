@@ -81,7 +81,7 @@ async getBuses() {
       const res = await axios.post('/api/parents', newParent)
       newParent = res.data
       const updatedParents = [...this.state.Parents]
-      this.setState({ Parents: updatedParents })
+      this.setState({ parents: updatedParents })
     } catch (err) {
       console.log(err)
     }
@@ -90,9 +90,9 @@ async getBuses() {
   addNewParent = async (newParent) => {
     try {
       await this.createParent(newParent)
-      const Parents = [...this.state.Parents]
-      Parents.push(newParent)
-      this.setState({ Parents })
+      const parents = [...this.state.parents]
+      parents.push(newParent)
+      this.setState({ parents })
     }
     catch (err) {
       console.log(err)
@@ -115,6 +115,7 @@ async getBuses() {
   console.log(error)
   }
   }
+
 
   render() {
 

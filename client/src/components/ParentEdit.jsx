@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
-
+import axios from 'axios'
 import { FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton} from './styled-components/Form'
 
 
@@ -9,16 +9,19 @@ class ParentEdit extends Component {
         super(props)
         this.defaultState = {
             updatedParent: {
-                name: " ",
-                username: " ",
-                address: " ",
-                lat: " ",
-                lng: " ",
-                img: " "
+                name: "",
+                username: "",
+                address: "",
+                lat: "",
+                lng: "",
+                img: ""
             },
             redirect: false
         }
         this.state = { ...this.defaultState }
+    }
+
+    componenetWillMount(){
     }
     handleInputChange = (event) => {
         const attribute = event.target.name
@@ -40,6 +43,16 @@ class ParentEdit extends Component {
         this.setState({redirctToParent: true})
     }
 
+    async deleteParent(parentId) {
+        try {
+            console.log('DELETE', parentId)
+            await axios.delete(`/api/parents/${parentId}`)
+            window.location.reload()
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
 
 
     render() {
@@ -56,7 +69,7 @@ class ParentEdit extends Component {
                         <FormInput
                             type="string"
                             name="name"
-                            placeholder={this.props.parent.name}
+                            placeholder="Full Name"
                             onChange={this.handleInputChange} 
                             value={this.state.updatedParent.name}/>
                     </FormField>
@@ -64,7 +77,7 @@ class ParentEdit extends Component {
                         <FormInput
                             type="string"
                             name="username"
-                            placeholder={this.props.parent.username}
+                            placeholder="User Name"
                             onChange={this.handleInputChange} 
                             value={this.state.updatedParent.username}/>
                     </FormField>
@@ -72,7 +85,7 @@ class ParentEdit extends Component {
                         <FormInput
                             type="string"
                             name="img"
-                            placeholder={this.props.parent.img}
+                            placeholder="Image"
                             onChange={this.handleInputChange} 
                             value={this.state.updatedParent.img} />
                     </FormField>
@@ -80,7 +93,7 @@ class ParentEdit extends Component {
                         <FormInput
                             type="string"
                             name="address"
-                            placeholder={this.props.parent.address}
+                            placeholder="Address"
                             onChange={this.handleInputChange} 
                             value={this.state.updatedParent.address} />
                     </FormField>
@@ -92,6 +105,7 @@ class ParentEdit extends Component {
                     <FormField>
                     <FormButton><Link to="/parents">Back</Link></FormButton>
                     </FormField>
+                    <button onClick={()=>this.deleteParent(this.props.parent.id)}>Delete Parent</button>
                 </FormBody>
                 </FormWrapper>
                 }
