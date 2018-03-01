@@ -43,6 +43,13 @@ class NewParent extends Component {
                             <FormField>
                                 <FormInput
                                     type="string"
+                                    name="username"
+                                    placeholder="Username"
+                                    onChange={this.handleInputChange} />
+                            </FormField>
+                            <FormField>
+                                <FormInput
+                                    type="string"
                                     name="img"
                                     placeholder="Profile Picture"
                                     onChange={this.handleInputChange} />
@@ -55,20 +62,7 @@ class NewParent extends Component {
                                     onChange={this.handleInputChange} />
                             </FormField>
                             <FormField>
-                                {/* <FormField>
-                        <FormInput
-                            type="string"
-                            name="lat"
-                            placeholder="Latitude"
-                            onChange={this.handleInputChange} />
-                    </FormField>
-                    <FormField>
-                        <FormInput
-                            type="string"
-                            name="lng"
-                            placeholder="Longitude"
-                            onChange={this.handleInputChange} />
-                    </FormField> */}
+                            
                                 <FormInputButton
                                     type="submit"
                                     value="Add New Parent" />

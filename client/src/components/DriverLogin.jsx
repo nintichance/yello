@@ -14,7 +14,7 @@ import {
 
 class LoginForm extends Component {
   state = {
-    driverUsername: "",
+    driver_username: "",
     login : false
   }
 
@@ -23,8 +23,8 @@ class LoginForm extends Component {
     event.preventDefault()
   }
 
-  handleLogin = (driverUsername)=>{
-    this.props.logInDriver(driverUsername)
+  handleLogin = (username)=>{
+    this.props.logInDriver(username)
     this.setState({login: true})
 }
 
@@ -39,16 +39,16 @@ class LoginForm extends Component {
       <LoginWrapper>
         <UserFormBody>
           <UserFormHeader>
-            Welcome Parents
+            Welcome Drivers
           </UserFormHeader>
 
           <form onSubmit={() => this.handleLogin(this.state.driver_username)}>
             <UserFormInput
-              name="username"
+              name="driver_username"
               type="text"
               placeholder="enter username"
               //CAUSING CHANGE TO NOT HAPPEN
-            //   value={this.state.driverUsername}
+              value={this.state.driver_username}
               onChange={this.handleChange}/>
             <br/>
             <UserFormButton>

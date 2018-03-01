@@ -31,4 +31,26 @@ export const MapContainerStyle = styled.div`
 export const ParentsContainer = styled.div`
     margin: 10vh;
 `
-export default {ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }
+
+export const NavDiv = styled.div`
+width: 100vw;
+position: fixed;        
+color: rgb(0, 0, 0);
+top: 0;
+left: 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 7vh;
+margin-bottom: 25px;
+background-color: #1b1b1b;
+a{
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    margin-right: 20px;
+    font-size: 1.25em;
+    text-shadow: 1px 1px rgba(0,0,0, 0.1);
+}
+`
+export default {NavDiv, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }

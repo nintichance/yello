@@ -5,7 +5,6 @@ import { ParentsContainer } from './styled-components/Containers'
 import { PeopleImages } from './styled-components/Images'
 
 const Buses = (props) => {
-console.log("hjhkgh",props.bus)
 
 
 

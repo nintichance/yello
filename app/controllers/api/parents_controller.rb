@@ -9,8 +9,6 @@ class Api::ParentsController < ApplicationController
     end
     def show
         @parent = Parent.find(params[:id])
-        # @buses = @parent.buses
-        # @data = {parent: @parent, buses: @buses}
         render json: @parent
     end
     def update
@@ -19,6 +17,13 @@ class Api::ParentsController < ApplicationController
 
         render json: @parent
     end
+
+    def add_bus
+        @parent = Parent.find(params[:parent_id])
+        @bus = Bus.find(params[:id])
+        @parent.buses << @bus
+    end
+
     def destroy
         @parent = Parent.find(params[:id]).delete
 
@@ -30,7 +35,7 @@ class Api::ParentsController < ApplicationController
         render json: @existing_parent
     end    
     def parent_params
-        params.require(:parent).permit(:name, :lat, :lng, :address, :img, :driver, :description, :username)
+        params.require(:parent).permit(:name, :lat, :lng, :address, :img, :username)
     end
 end
 # class Api::InvestmentsController < ApplicationController

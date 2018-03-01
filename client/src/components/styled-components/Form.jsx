@@ -106,6 +106,15 @@ transition: all .25s cubic-bezier(.02, .01, .47, 1);
 }
 `
 
+export const LogOutButton = styled.button`
+  border: 0;
+  background-color: rgba(0,0, 0,  0.01);
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+`
+
 export default {
-    FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton
+  LogOutButton, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton
 }
