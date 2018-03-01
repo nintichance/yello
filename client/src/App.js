@@ -20,7 +20,7 @@ class App extends Component {
     currentParent: {
       buses: []
     },
-    driver: {}
+    currentDriver: {}
   }
 
   componentWillMount(){
@@ -41,8 +41,9 @@ logInParent = async(username)=>{
 }
 //LOG IN BUS DRIVER
 logInDriver = async(driver_username)=>{
+  console.log(driver_username)
   try{
-  const res = await axios.get(`/api/parents/retrieve/${driver_username}`)
+  const res = await axios.get(`/api/buses/retrieve/${driver_username}`)
   console.log("CALLED", res.data[0] )
   this.setState({currentDriver: res.data[0]})
   }

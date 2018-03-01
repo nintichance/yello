@@ -4,6 +4,7 @@ import MapContainer from './MapContainer'
 import { MapContainerStyle } from './styled-components/Containers'
 import { PeopleImages } from './styled-components/Images'
 import NavBar from './NavBar'
+import ParentEdit from './ParentEdit'
 class ParentShow extends Component {
     state = {
         parent: {
@@ -48,6 +49,7 @@ class ParentShow extends Component {
     render() {
         return (
             <div>
+                <ParentEdit/>
                 <h1>{this.state.parent.name}</h1>
                 {this.state.parent.buses.map((bus, index) => {
                     return (

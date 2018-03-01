@@ -5,6 +5,7 @@ import axios from 'axios'
 class NewParent extends Component {
     state = {
         newParent: {},
+        updatedParent: {},
         redirect: false
     }
     handleInputChange = (event) => {
