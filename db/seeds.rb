@@ -19,7 +19,8 @@ bus_one = Bus.create(
   lat: "33.7491288",
   lng: "-84.361924",
   address: "200 Pearl St SE, Atlanta, GA 30316, USA",
-  driver: "driver",
+  driver: "Heyo Rivier",
+  driver_username: "heyorivier",
   img: "https://i.imgur.com/V8Jxe3D.jpg",
   description: "Has been driving for five years. Background clean."
   )
@@ -28,7 +29,8 @@ bus_two = Bus.create(
   lat: "33.7491288",
   lng: "-84.361924",
   address: "200 Pearl St SE, Atlanta, GA 30316, USA",
-  driver: "driver",
+  driver: "Cindy Mayweather",
+  driver_username: "android",
   img: "https://i.imgur.com/V8Jxe3D.jpg",
   description: "Has been driving for five years. Background clean."
   )
@@ -37,7 +39,8 @@ bus_three = Bus.create(
   lat: "33.7491288",
   lng: "-84.361924",
   address: "200 Pearl St SE, Atlanta, GA 30316, USA",
-  driver: "driver",
+  driver: "Marco Smarco",
+  driver_username: "rocks",
   img: "https://i.imgur.com/V8Jxe3D.jpg",
   description: "Has been driving for five years. Background clean."
   )

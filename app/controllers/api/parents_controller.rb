@@ -30,7 +30,7 @@ class Api::ParentsController < ApplicationController
         render json: @existing_parent
     end    
     def parent_params
-        params.require(:parent).permit(:name, :lat, :lng, :address, :img, :driver, :description)
+        params.require(:parent).permit(:name, :lat, :lng, :address, :img, :driver, :description, :username)
     end
 end
 # class Api::InvestmentsController < ApplicationController

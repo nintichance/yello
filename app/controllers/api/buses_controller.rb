@@ -22,8 +22,13 @@ class Api::BusesController < ApplicationController
 
         render status: :ok
     end
+    def retrieve
+        @existing_driver = Driver.where(driver_username: params[:driver_username])
+        puts @existing_driver
+        render json: @existing_driver
+    end    
     def bus_params
-        params.require(:bus).permit(:lat, :lng, :address, :img, :driver, :description)
+        params.require(:bus).permit(:lat, :lng, :address, :img, :driver, :description, :driver_username)
     end
 end
 

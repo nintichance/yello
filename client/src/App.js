@@ -9,7 +9,7 @@ import ParentNew from './components/ParentNew'
 import ParentShow from './components/ParentShow'
 import BusShow from './components/BusShow'
 import LoginForm from './components/LoginForm'
-
+import DriverLogin from './components/DriverLogin'
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
@@ -19,7 +19,8 @@ class App extends Component {
     buses: [],
     currentParent: {
       buses: []
-    }
+    },
+    driver: {}
   }
 
   componentWillMount(){
@@ -27,19 +28,23 @@ class App extends Component {
     this.getBuses()
   }
 
-  // isLoggedIn = () => {
-  //   if (this.state.isLoggedIn === false){
-  //     this.setState({isLoggedIn: true})
-  //   }else{
-  //     this.setState({isLoggedIn: false})
-  //   }
-  // }
-
 logInParent = async(username)=>{
   try{
   const res = await axios.get(`/api/parents/retrieve/${username}`)
   console.log("CALLED", res.data[0] )
   this.setState({currentParent: res.data[0]})
+  }
+  catch(error){
+    console.log(error)
+  }
+  
+}
+//LOG IN BUS DRIVER
+logInDriver = async(driver_username)=>{
+  try{
+  const res = await axios.get(`/api/parents/retrieve/${driver_username}`)
+  console.log("CALLED", res.data[0] )
+  this.setState({currentDriver: res.data[0]})
   }
   catch(error){
     console.log(error)
@@ -102,8 +107,8 @@ async getBuses() {
     try{
     const nowParent = {...this.state.currentParent}
     const newParentObject = nowParent.buses.push(bus)
+    await axios.put(`api/parents/${this.state.currentParent.id}`, { newParentObject })
     console.log("RIGHTHERE", nowParent.buses)
-    await axios.patch(`api/parents/${this.state.currentParent.id}`, { newParentObject })
     this.setState({currentParent: newParentObject})
   }
   catch(error){
@@ -120,7 +125,7 @@ async getBuses() {
     const ParentShowComponent = (props) => (<ParentShow logInParent={this.logInParent} {...props}/>)
     const BusShowComponent = (props) => (<BusShow {...props}/>)
     const LoginFormComponent = () => (<LoginForm logInParent={this.logInParent}/>)
-
+    const DriverLoginComponent = () => (<DriverLogin logInDriver={this.logInDriver}/>)
 
     return (
       <Router>
@@ -133,6 +138,7 @@ async getBuses() {
           <Route exact path="/buses/:bus_id" component={BusShowComponent}/>
           <Route exact path="/buses" component={BusesComponent}/>
           <Route exact path="/login" component={LoginFormComponent} />
+          <Route exact path="/login/driver" component={DriverLoginComponent} />
           </Switch>
         </div>
       </Router>
