@@ -31,6 +31,10 @@ export const NavItems = styled.div`
   
 `
 
+export const FooterSpace = styled.div`
+    margin: 25px;
+`
+
 export const FooterStyle = styled.div`
     width: 100vw;
     z-index: 1;
@@ -78,5 +82,5 @@ export const RefreshButton = styled.button`
 `
 
 export default {
-    RefreshButton, FooterStyle, Nav, NavItems
+    FooterSpace, RefreshButton, FooterStyle, Nav, NavItems
 }

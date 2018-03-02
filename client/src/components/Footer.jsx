@@ -1,5 +1,5 @@
 import React from 'react'
-import { FooterStyle, RefreshButton } from './styled-components/NavStyle'
+import { FooterStyle, RefreshButton, FooterSpace } from './styled-components/NavStyle'
 import { Button } from 'react-materialize'
 const Footer = () => {
 
@@ -9,7 +9,9 @@ const Footer = () => {
     }
     return(      
         <FooterStyle>
-            <Button floating large className='red'  waves='light'  icon='refresh' onClick={() => refreshPage()}>Refresh</Button>
+                        <FooterSpace></FooterSpace>
+
+            <Button floating large className='red'  waves='light'  icon='refresh' margin-left="10px;" onClick={() => refreshPage()}>Refresh</Button>
         </FooterStyle>
     )
 }
