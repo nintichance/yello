@@ -76,15 +76,7 @@ class ParentShow extends Component {
         const editForm = this.state.parent.buses.map((bus, index) => {
             return (
                 <div>
-                    <NavBar />
-                    <Card header={<CardTitle reveal image={bus.img} waves='light' />}
-                        title={bus.driver}
-                        reveal={<p>{bus.description}</p>}>
-                        <p><Link to={`/buses/${bus.id}`}>See Map</Link></p>
-                        <button onClick={() => { this.showEdit() }}>Edit</button>
-                        <button onClick={() => this.deleteBusFromParent(index, bus)}> Remove Bus </button>
-                    </Card>
-                    {/* <h1>{this.state.parent.name}</h1>
+                   <h1>{this.state.parent.name}</h1>
                     <h1>{bus.id}</h1>
                     <h1>{bus.driver}</h1>
                     <PeopleImages src={bus.img} />
@@ -93,7 +85,7 @@ class ParentShow extends Component {
                     <div>{bus.address}</div>
                     
                     <button onClick={()=>{this.showEdit()}}>Edit</button>
-                    <button onClick={()=>this.deleteBusFromParent(index, bus)}> Remove Bus </button> */}
+                    <button onClick={()=>this.deleteBusFromParent(index, bus)}> Remove Bus </button> 
                 </div>
             )
         })
@@ -101,6 +93,7 @@ class ParentShow extends Component {
         return (
 
             <div>
+                <NavBar />
                 {this.state.showEdit ?
                     <ParentEdit updateParent={this.updateParent} parentId={this.state.parent.id} parent={this.state.parent} /> :
                     editForm}
