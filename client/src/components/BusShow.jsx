@@ -3,8 +3,10 @@ import axios from 'axios'
 import MapContainer from './MapContainer'
 import { MapContainerStyle, BusShowContainer } from './styled-components/Containers'
 import Footer from './Footer'
-import NavBar from './NavBar'
+import HomeNav from './HomeNav'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { HomeNavDiv, NavItems } from './styled-components/NavStyle'
 
 class BusShow extends Component {
     state = {
@@ -32,7 +34,7 @@ class BusShow extends Component {
     render() {
         return (
             <BusShowContainer>
-                <NavBar />
+                <HomeNav />
                 <MapContainer lat={this.state.bus.lat} lng={this.state.bus.lng} />
                 <Footer />
             </BusShowContainer>

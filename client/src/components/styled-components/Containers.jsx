@@ -11,10 +11,10 @@ export const Container = styled.div `
 export const DevelopmentContainer = Container.extend`
 `
 export const HomeContainer = Container.extend`
-    background-color: #1b1b1b;
+    background-color: #f9a825;
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     flex: 1 0 auto;
 `
 export const LogOutContainer = styled.div`
@@ -32,32 +32,55 @@ export const ParentsContainer = styled.div`
     margin: 10vh;
 `
 
-export const NavDiv = styled.div`
-width: 100vw;
-position: fixed;  
-flex: 1 0 auto;      
-color: rgb(0, 0, 0);
-top: 0;
-left: 0;
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 7vh;
-margin-bottom: 25px;
-background-color: #1b1b1b;
-z-index: 1;
-a{
-    text-decoration: none;
-    color: white;
-    margin: 10px;
-    margin-right: 20px;
-    font-size: 1.25em;
-    text-shadow: 1px 1px rgba(0,0,0, 0.1);
-}
-`
 
 export const BusShowContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    flex-wrap: wrap;
 `
-export default {BusShowContainer, NavDiv, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }
+
+export const IntroDiv = styled.div`
+    height: 70vh;
+    width: 100vw;
+    background-color: #f9a825;
+`
+
+export const InfoContainer = styled.div`
+    height: 40vh;
+    width: 100vw;
+    background-color: #1b1b1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        margin: 30px;
+        font-size: 1em;
+       color: #f9a825;
+
+    }
+
+@media only screen and (max-width: 600px){
+   height: 60vh;
+   flex-direction: column;
+`
+
+export const FooterDiv = styled.div`
+    height: 30vh;
+    width: 100vw;
+    background-color: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p {
+        color: #fafafa;
+    }
+`
+
+export const TrackBuses = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+export default { InfoContainer, IntroDiv, BusShowContainer, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }

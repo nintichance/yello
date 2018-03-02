@@ -7,11 +7,10 @@ const Footer = () => {
         console.log("CADSHDJKHE")
         window.location.reload()
     }
-    return(      
+    return (
         <FooterStyle>
-                        <FooterSpace></FooterSpace>
-
-            <Button floating large className='red'  waves='light'  icon='refresh' margin-left="10px;" onClick={() => refreshPage()}>Refresh</Button>
+            <FooterSpace></FooterSpace>
+            <Button floating large className='red' waves='light' icon='refresh' margin-left="10px;" onClick={() => refreshPage()}>Refresh</Button>
         </FooterStyle>
     )
 }

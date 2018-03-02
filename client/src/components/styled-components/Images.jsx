@@ -36,7 +36,15 @@ export const CityImage = styled.img`
 `
 export const LogoImage = styled.img`
     margin-left: 15px;
-    width: 4.5vw;
+    width: 4vw;
+
+    @media only screen and (max-width: 600px){
+       width: 10vw;
+    
+    }
+`
+export const BusImage = styled.img`
+    width: 20vw;
 `
 
 export const PostIcon = styled.img`
@@ -55,6 +63,10 @@ export const EditIcon = TrashIcon.extend`
 
 `
 
+export const TrackBusesImage = styled.img`
+    width: 50vw;
+`
 
 
-export default { PeopleImages, CityImage, LogoImage, PostIcon, TrashIcon }
+
+export default { TrackBusesImage, BusImage, PeopleImages, CityImage, LogoImage, PostIcon, TrashIcon }

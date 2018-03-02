@@ -103,14 +103,13 @@ async getBuses() {
 
 //UPDATE PARENT OBJECT WITH NEW BUS IN BUSES ARRAY
   updateParentWithBus = async (bus) => {
-    console.log("State", this.state.currentParent)
     try{
+
     const nowParent = {...this.state.currentParent}
     nowParent.buses.push(bus)
-    console.log("RIGHTHERE", nowParent)
     await axios.patch(`api/parents/${this.state.currentParent.id}/buses/${bus.id}`, { parent: nowParent })
     this.setState({currentParent: nowParent})
-  }
+    }
   catch(error){
   console.log(error)
   }
@@ -125,7 +124,7 @@ async getBuses() {
     const NewParentComponent = () => (<ParentNew addNewParent = {this.addNewParent}/>)
     const ParentShowComponent = (props) => (<ParentShow logInParent={this.logInParent} {...props}/>)
     const BusShowComponent = (props) => (<BusShow {...props}/>)
-    const LoginFormComponent = () => (<LoginForm logInParent={this.logInParent}/>)
+    const LoginFormComponent = () => (<LoginForm currentParent={this.state.currentParent} logInParent={this.logInParent}/>)
     const DriverLoginComponent = () => (<DriverLogin logInDriver={this.logInDriver}/>)
 
     return (

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import {
   LoginWrapper,
@@ -14,23 +14,27 @@ import {
 class LoginForm extends Component {
   state = {
     username: "",
-    login : false
+    login: false,
+    currentParent: {}
   }
 
   handleChange = (event) => {
-    this.setState({[event.target.name]: event.target.value})
+    this.setState({ [event.target.name]: event.target.value })
     event.preventDefault()
   }
 
-  handleLogin = (username)=>{
+  handleLogin = (username) => {
     this.props.logInParent(username)
-    this.setState({login: true})
-}
+    this.setState({ login: true })
+  }
 
   render() {
 
     if (this.state.login === true) {
-      return (<Redirect to="/" />)   
+      return (<Redirect to="/login" />)
+    }
+    if (this.props.currentParent.username) {
+      return (<Redirect to={`/parents/${this.props.currentParent.id}`} />)
     }
 
     return (
@@ -47,10 +51,10 @@ class LoginForm extends Component {
               type="text"
               placeholder="enter username"
               value={this.state.username}
-              onChange={this.handleChange}/>
-            <br/>
+              onChange={this.handleChange} />
+            <br />
             <UserFormButton>
-              <GlobalFormInputButton className="input-button" type="submit" value="login"/>
+              <GlobalFormInputButton className="input-button" type="submit" value="login" />
             </UserFormButton>
             <Link to="/login/driver"><UserFormButton>Login as Driver</UserFormButton></Link>
           </form>
