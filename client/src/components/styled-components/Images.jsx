@@ -65,6 +65,9 @@ export const EditIcon = TrashIcon.extend`
 
 export const TrackBusesImage = styled.img`
     width: 50vw;
+    @media only screen and (min-width: 600px){
+        width: 25vw;
+     }
 `
 
 

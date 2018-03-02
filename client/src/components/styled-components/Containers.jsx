@@ -62,6 +62,7 @@ export const InfoContainer = styled.div`
 @media only screen and (max-width: 600px){
    height: 60vh;
    flex-direction: column;
+}
 `
 
 export const FooterDiv = styled.div`
