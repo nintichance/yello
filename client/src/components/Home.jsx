@@ -31,7 +31,6 @@ const Home = () => {
                 to send your children out in the cold
                 too early in the morning because you'll
                     always know where the bus is!</p>
-                < BusImage src="https://i.imgur.com/nuztiM2.png" />
             </InfoContainer>
             <IntroDiv>
 
