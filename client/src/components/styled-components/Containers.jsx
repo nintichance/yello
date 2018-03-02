@@ -84,4 +84,11 @@ export const TrackBuses = styled.div`
     align-items: center;
     justify-content: center;
 `
-export default { InfoContainer, IntroDiv, BusShowContainer, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }
+export const ParentShowBus = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    justify-content: center;
+    align-items: center;
+`
+export default { ParentShowBus, InfoContainer, IntroDiv, BusShowContainer, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }

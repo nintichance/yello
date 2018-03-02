@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { PeopleImages } from './styled-components/Images'
+import { PeopleImages, TrashIcon } from './styled-components/Images'
+import { ParentShowBus } from './styled-components/Containers'
+import { Header, ParentShowContainer, ParentPageContainer } from './styled-components/ParentPageStyle' 
 import NavBar from './NavBar'
 import ParentEdit from './ParentEdit'
+import { ParentPageButton } from './styled-components/Form'
 import { Link } from 'react-router-dom'
-import { Card, CardTitle } from 'react-materialize'
+
 
 class ParentShow extends Component {
     state = {
         parent: {
-            name: "",
             buses: []
         },
         redirect: false,
@@ -73,33 +75,35 @@ class ParentShow extends Component {
 
     render() {
 
-        const editForm = this.state.parent.buses.map((bus, index) => {
+        const busesIndex = this.state.parent.buses.map((bus, index) => {
             return (
-                <div>
-                   <h1>{this.state.parent.name}</h1>
-                    <h1>{bus.id}</h1>
-                    <h1>{bus.driver}</h1>
+                <ParentShowBus>
                     <PeopleImages src={bus.img} />
-                    <h1>{bus.address}</h1>
-                    <div>{bus.driver}</div>
-                    <div>{bus.address}</div>
-                    
-                    <button onClick={()=>{this.showEdit()}}>Edit</button>
-                    <button onClick={()=>this.deleteBusFromParent(index, bus)}> Remove Bus </button> 
-                </div>
+                    <p>The Bus Driver is: {bus.driver}</p>
+                    {/* <TrashIcon src="https://i.imgur.com/OMSX8Z5.png" onClick={()=>this.deleteBusFromParent(index, bus)} /> */}
+                    <ParentPageButton> <Link to={`/buses/${bus.id}`}>Track Bus</Link></ParentPageButton> 
+                </ParentShowBus>
             )
         })
-
+        // <TrashIcon src="https://i.imgur.com/OMSX8Z5.png" onClick={() => { props.deletePost(props.cityId, props.postId) }} />
+        // <EditIcon src="https://i.imgur.com/L0xUMw1.png" onClick={() => { props.showEditForm() }} />
         return (
 
-            <div>
+            <ParentPageContainer>
                 <NavBar />
+                <Header>Welcome, {this.state.parent.name}</Header>
+
+                <ParentShowContainer>
                 {this.state.showEdit ?
                     <ParentEdit updateParent={this.updateParent} parentId={this.state.parent.id} parent={this.state.parent} /> :
-                    editForm}
-            </div>
+                    busesIndex}
+                    </ParentShowContainer>
+                                        {/* <ParentPageButton onClick={()=>{this.showEdit()}}>Edit</ParentPageButton> */}
+
+            </ParentPageContainer>
 
         )
     }
 }
 export default ParentShow
+

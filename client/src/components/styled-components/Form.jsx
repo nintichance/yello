@@ -73,10 +73,8 @@ export const FormButton = styled.button`
   font-size: 14px;
   font-weight: 700;
   color: #fff;
-  background-color: rgba(0, 255, 255, .25);
   border: 0;
   border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, .08);
   cursor: pointer;
   transition: all .25s cubic-bezier(.02, .01, .47, 1);
   &:hover {
@@ -84,6 +82,10 @@ export const FormButton = styled.button`
     transform: translate(0, -5px);
   }
 
+`
+export const ParentPageButton = FormButton.extend`
+  width: 25%;
+  background-color: rgba(0,0,0,0,01);
 `
 export const FormInputButton = styled.input`
 display: block;
@@ -116,5 +118,5 @@ export const LogOutButton = styled.button`
 `
 
 export default {
-  LogOutButton, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton
+  ParentPageButton, LogOutButton, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton
 }

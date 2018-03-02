@@ -19,9 +19,9 @@ bus_one = Bus.create(
   lat: "33.7491288",
   lng: "-84.361924",
   address: "200 Pearl St SE, Atlanta, GA 30316, USA",
-  driver: "Heyo Rivier",
-  driver_username: "heyorivier",
-  img: "https://i.imgur.com/V8Jxe3D.jpg",
+  driver: "Cindy Mayweather",
+  driver_username: "android",
+  img: "https://i.imgur.com/KQm21ye.jpg",
   description: "Has been driving for five years. Background clean."
   )
 
@@ -29,9 +29,9 @@ bus_two = Bus.create(
   lat: "33.7491288",
   lng: "-84.361924",
   address: "200 Pearl St SE, Atlanta, GA 30316, USA",
-  driver: "Cindy Mayweather",
-  driver_username: "android",
-  img: "https://i.imgur.com/V8Jxe3D.jpg",
+  driver: "Heyo Rivier",
+  driver_username: "heyorivier",
+  img:"https://i.imgur.com/QKCVUFz.jpg?3",
   description: "Has been driving for five years. Background clean."
   )
 
@@ -47,7 +47,7 @@ bus_three = Bus.create(
 
 micah = Parent.create(
     name: "Micah Michaels",
-    img: "https://i.imgur.com/AqQrCXI.jpg?1",
+    img: "https://i.imgur.com/KQm21ye.jpg",
     address: "675 Ponce De Leon Ave NE, Atlanta, GA 30308",
     lat: 33.7725173,
     lng: -84.3659673,
@@ -55,8 +55,8 @@ micah = Parent.create(
   )
 
 lula = Parent.create(
-    name: "Lula Micah",
-    img: "https://i.imgur.com/AqQrCXI.jpg?1",
+    name: "Lula Mim",
+    img: "https://i.imgur.com/QKCVUFz.jpg?3",
     address: "675 Ponce De Leon Ave NE, Atlanta, GA 30308",
     lat: 33.7725173,
     lng: -84.3659673,
