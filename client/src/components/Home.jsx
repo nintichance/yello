@@ -44,7 +44,7 @@ const Home = () => {
                     <PostIcon src="https://i.imgur.com/1DFHLqt.png" />
                 </div>
                 <p>
-                    Design with &hearts; by Ninti
+                    Design with &#10084; by Ninti
                 </p>
             </FooterDiv>
         </div>
