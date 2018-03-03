@@ -38,9 +38,15 @@ const Home = () => {
             <FooterDiv>
                 <p>Meet the Developer:</p>
                 <div>
-                    <PostIcon src="https://i.imgur.com/Nj376OA.png" />
-                    <PostIcon src="https://i.imgur.com/IhzKl4j.png" />
-                    <PostIcon src="https://i.imgur.com/1DFHLqt.png" />
+                <Link to="https://www.linkedin.com/in/ninti-chance-13a15a122/">
+                <PostIcon src="https://i.imgur.com/Nj376OA.png" />
+                </Link>
+                <Link to="https://github.com/nintichance">
+                <PostIcon src="https://i.imgur.com/IhzKl4j.png" />
+                </Link>
+                <Link to="https://www.instagram.com/ninti.wav/">
+                <PostIcon src="https://i.imgur.com/1DFHLqt.png" />
+                </Link>
                 </div>
                 <p>
                     Design with &#10084; by Ninti
