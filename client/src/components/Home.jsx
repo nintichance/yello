@@ -10,7 +10,7 @@ const Home = () => {
             <HomeContainer> 
                 {/* <Link to="/parents">Parents</Link> */}
                 <TrackBuses>
-                    <p>Track Buses</p>
+                    <p>Click to Track Buses</p>
                 <Link to="/buses">
                 <TrackBusesImage src="https://i.imgur.com/zdlF7rB.png"/>
                 </Link>
