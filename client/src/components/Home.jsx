@@ -38,15 +38,15 @@ const Home = () => {
             <FooterDiv>
                 <p>Meet the Developer:</p>
                 <div>
-                <Link to="https://www.linkedin.com/in/ninti-chance-13a15a122/">
+                <a href="https://www.linkedin.com/in/ninti-chance-13a15a122/" target="_blank">
                 <PostIcon src="https://i.imgur.com/Nj376OA.png" />
-                </Link>
-                <Link to="https://github.com/nintichance">
+                </a>
+                <a href="https://github.com/nintichance" target="_blank">
                 <PostIcon src="https://i.imgur.com/IhzKl4j.png" />
-                </Link>
-                <Link to="https://www.instagram.com/ninti.wav/">
+                </a>
+                <a href="https://www.instagram.com/ninti.wav/" target="_blank">
                 <PostIcon src="https://i.imgur.com/1DFHLqt.png" />
-                </Link>
+                </a>
                 </div>
                 <p>
                     Design with &#10084; by Ninti
