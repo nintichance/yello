@@ -3,25 +3,28 @@ import { Link } from 'react-router-dom'
 import { ParentsContainer } from './styled-components/Containers'
 import { PeopleImages } from './styled-components/Images'
 import { Header, ParentShowContainer, ParentPageContainer } from './styled-components/ParentPageStyle'
-import { ParentShowBus } from './styled-components/Containers'
-import { ParentPageButton } from './styled-components/Form'
-
+import { ParentShowBus, ButtonDiv } from './styled-components/Containers'
+import { BusPageButton } from './styled-components/Form'
+import { Container, Text, Overlay, Image } from './styled-components/BusPageStyle'
 const Buses = (props) => {
 
     return (
 
-        <ParentsContainer>
-            <ParentShowContainer>
-                <ParentShowBus>
+        <div>
+                <Container>
+                <Link to={`/buses/${props.bus_id}`}>
                     <PeopleImages src={props.img} />
-                    <p>The Bus Driver is: {props.driver}</p>
-                    <h3>{props.description}</h3>
-                    <ParentPageButton> <Link to={`/buses/${props.bus_id}`}>Track Bus</Link></ParentPageButton>
-                    <button onClick={() => props.updateParentWithBus(props.bus)}>+</button>
-                </ParentShowBus>
-            </ParentShowContainer>
-        </ParentsContainer>
+
+                    <Overlay>
+                        <Text><p>Bus Driver: {props.driver}</p><p>{props.description}</p></Text><br/>
+                        <Text></Text>
+                    </Overlay>
+                </Link>
+            </Container>              
+        </div>
     )
 }
 
 export default Buses
+
+

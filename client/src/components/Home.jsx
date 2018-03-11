@@ -10,7 +10,7 @@ const Home = () => {
             <HomeContainer> 
                 {/* <Link to="/parents">Parents</Link> */}
                 <TrackBuses>
-                    <p>Click to Track Buses</p>
+                    <p>Click Map to Track Buses</p>
                 <Link to="/buses">
                 <TrackBusesImage src="https://i.imgur.com/zdlF7rB.png"/>
                 </Link>
@@ -18,7 +18,8 @@ const Home = () => {
             </HomeContainer>
             <InfoContainer>
                 < BusImage src="https://i.imgur.com/nuztiM2.png" />
-
+                <div>
+                <p>Mission Statement:</p>
                 <p>We are as concerned with
                 the safety and schedule
                  of your kids as you are!
@@ -31,6 +32,7 @@ const Home = () => {
                 to send your children out in the cold
                 too early in the morning because you'll
                     always know where the bus is!</p>
+                    </div>
             </InfoContainer>
             <IntroDiv>
 

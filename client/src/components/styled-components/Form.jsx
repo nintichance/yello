@@ -87,6 +87,15 @@ export const ParentPageButton = FormButton.extend`
   width: 25%;
   background-color: rgba(0,0,0,0,01);
 `
+
+export const BusPageButton = FormButton.extend`
+    width: 33%;
+  background-color: #f9a825;
+  a{
+    color: white;
+  }
+
+`
 export const FormInputButton = styled.input`
 display: block;
 width: 100%;
@@ -118,5 +127,5 @@ export const LogOutButton = styled.button`
 `
 
 export default {
-  ParentPageButton, LogOutButton, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton
+  BusPageButton, ParentPageButton, LogOutButton, FormWrapper, FormHeader, FormHeading, FormBody, FormField, FormInput, FormButton, FormInputButton
 }

@@ -32,11 +32,11 @@ export const ParentsContainer = styled.div`
     margin: 10vh;
 `
 
-
 export const BusShowContainer = styled.div`
     display: flex;
-    // flex-direction: column;
     flex-wrap: wrap;
+    justify-content: space-around;
+  
 `
 
 export const IntroDiv = styled.div`
@@ -87,8 +87,16 @@ export const TrackBuses = styled.div`
 export const ParentShowBus = styled.div`
     display: flex;
     flex-direction: column;
-    width: 45vw;
+    width: 33vw;
     justify-content: center;
     align-items: center;
+    background-color: #1b1b1b;
+    padding: 25px;
 `
-export default { ParentShowBus, InfoContainer, IntroDiv, BusShowContainer, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }
+
+export const ButtonDiv = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+`
+export default { ButtonDiv, ParentShowBus, InfoContainer, IntroDiv, BusShowContainer, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }

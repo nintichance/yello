@@ -7,7 +7,7 @@ const NavBar = (props) => {
 
     return (
         <NavDiv>
-            <Link to="/"><LogoImage src="https://i.imgur.com/et0hxvo.png"/></Link>
+            <Link to="/"><LogoImage src="https://i.imgur.com/nuztiM2.png"/></Link>
             <NavItems>
                 <Link to="/login">Login</Link>
                 <Link to="/parents/new">Sign Up</Link>

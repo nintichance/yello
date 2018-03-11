@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const PeopleImages = styled.img `
-width: 35vw;
+width: 30vw;
 `
 export const CityImage = styled.img`
     width: 24.75vw;

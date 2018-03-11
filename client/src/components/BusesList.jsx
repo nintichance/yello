@@ -1,6 +1,7 @@
 import React from 'react'
 import Buses from './Buses'
 import NavBar from './NavBar'
+import { BusShowContainer } from './styled-components/Containers'
 const BusesList = (props) => {
 
     const busesList = props.buses.map((bus, index)=>{
@@ -20,10 +21,10 @@ const BusesList = (props) => {
     })
 
     return(
-        <div>
+        <BusShowContainer>
             <NavBar />
             {busesList}
-        </div>
+        </BusShowContainer>
     )
 
 }
