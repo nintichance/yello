@@ -5,7 +5,7 @@ import { ParentShowBus } from './styled-components/Containers'
 import { Header, ParentShowContainer, ParentPageContainer } from './styled-components/ParentPageStyle' 
 import NavBar from './NavBar'
 import ParentEdit from './ParentEdit'
-import { ParentPageButton } from './styled-components/Form'
+import { TrackBusButton } from './styled-components/Form'
 import { Link } from 'react-router-dom'
 
 
@@ -81,7 +81,7 @@ class ParentShow extends Component {
                     <PeopleImages src={bus.img} />
                     <p>The Bus Driver is: {bus.driver}</p>
                     {/* <TrashIcon src="https://i.imgur.com/OMSX8Z5.png" onClick={()=>this.deleteBusFromParent(index, bus)} /> */}
-                    <ParentPageButton> <Link to={`/buses/${bus.id}`}>Track Bus</Link></ParentPageButton> 
+                    <TrackBusButton> <Link to={`/buses/${bus.id}`}>Track Bus</Link></TrackBusButton> 
                 </ParentShowBus>
             )
         })

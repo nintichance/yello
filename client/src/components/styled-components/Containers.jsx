@@ -87,11 +87,21 @@ export const TrackBuses = styled.div`
 export const ParentShowBus = styled.div`
     display: flex;
     flex-direction: column;
-    width: 33vw;
+    width: 31vw;
+    margin: 1vw;
     justify-content: center;
     align-items: center;
     background-color: #1b1b1b;
+    color: white;
     padding: 25px;
+
+    @media only screen and (max-width: 800px) {
+        width: 45vw;
+    }
+    
+    @media only screen and (max-width: 450px) {
+        width: 80vw;
+    }
 `
 
 export const ButtonDiv = styled.div`

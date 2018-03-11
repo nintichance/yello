@@ -12,12 +12,13 @@ const Buses = (props) => {
                 <Container>
                 <Link to={`/buses/${props.bus_id}`}>
                     <DriversImages src={props.img} />
-
+                </Link>
                     <Overlay>
-                        <Text><p>Bus Driver: {props.driver}</p><p>{props.description}</p><p>Bus Number: {props.bus_id}</p></Text>
+                    <Link to={`/buses/${props.bus_id}`}>
+ <Text><p>Bus Driver: {props.driver}</p><p>{props.description}</p><p>Bus Number: {props.bus_id}</p></Text></Link>
                         <BusPageButton onClick={() => props.updateParentWithBus(props.bus)}>+</BusPageButton>
                     </Overlay>
-                </Link>
+               
             </Container>              
         </div>
     )

@@ -87,6 +87,13 @@ export const ParentPageButton = FormButton.extend`
   width: 25%;
   background-color: rgba(0,0,0,.01);
 `
+export const TrackBusButton = FormButton.extend`
+  width: 33%;
+  background-color: #f9a825;
+  a{
+  color: white;
+  }
+`
 
 export const BusPageButton = FormButton.extend`
     width: 33%;
