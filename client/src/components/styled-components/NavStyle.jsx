@@ -86,8 +86,16 @@ export const FooterStyle = styled.div`
 
 }
 `
-
-
+export const RefreshButton = styled.button`
+    background-color: rgba(0, 0, 0, 0.001);
+    border-color: rgba(0, 0, 0, 0.001);
+    `
+export const RefreshImage = styled.img`
+    width: 60px;
+    @media only screen and (max-width: 600px){
+        width: 80px;
+    }
+`
 export default {
     HomeNavDiv, NavDiv, FooterSpace, FooterStyle, NavItems
 }

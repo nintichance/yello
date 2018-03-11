@@ -74,7 +74,7 @@ class MapContainer extends Component {
         zoom={17}>
         <Marker 
           name={'Current location'}
-          icon= "https://i.imgur.com/FuM0Drp.png?1"
+          icon= "https://i.imgur.com/cHknFkT.png?1"
           />
 
       </Map>
