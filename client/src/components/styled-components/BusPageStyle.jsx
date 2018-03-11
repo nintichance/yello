@@ -1,5 +1,16 @@
 import styled from 'styled-components'
 
+export const DriversImages = styled.img `
+width: 30vw;
+@media only screen and (max-width: 800px) {
+    width: 45vw;
+}
+
+@media only screen and (max-width: 450px) {
+    width: 90vw;
+}
+`
+
 export const Container = styled.div `
 position: relative;
 margin-top: 10px;
@@ -8,7 +19,18 @@ width: 30vw;
 a {
      width: 100%;
     }
-  `
+
+
+@media only screen and (max-width: 800px) {
+    width: 45vw;
+}
+
+
+@media only screen and (max-width: 450px) {
+    width: 90vw;
+}
+
+`
 export const Text = styled.div`
   color: #F4C708;
   font-size: 20px;
@@ -41,3 +63,10 @@ export const Overlay = styled.div`
 }
 `
 
+export const InstructionsDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #F4C708;
+    margin-bottom: 5px;
+`
