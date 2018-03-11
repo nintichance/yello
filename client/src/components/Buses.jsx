@@ -14,8 +14,8 @@ const Buses = (props) => {
                     <DriversImages src={props.img} />
 
                     <Overlay>
-                        <Text><p>Bus Driver: {props.driver}</p><p>{props.description}</p><p>Bus Number: {props.bus_id}</p></Text><br/>
-                        <Text></Text>
+                        <Text><p>Bus Driver: {props.driver}</p><p>{props.description}</p><p>Bus Number: {props.bus_id}</p></Text>
+                        <BusPageButton onClick={() => props.updateParentWithBus(props.bus)}>+</BusPageButton>
                     </Overlay>
                 </Link>
             </Container>              

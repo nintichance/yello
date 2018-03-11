@@ -85,12 +85,14 @@ export const FormButton = styled.button`
 `
 export const ParentPageButton = FormButton.extend`
   width: 25%;
-  background-color: rgba(0,0,0,0,01);
+  background-color: rgba(0,0,0,.01);
 `
 
 export const BusPageButton = FormButton.extend`
     width: 33%;
-  background-color: #f9a825;
+  color: #f9a825;
+  font-size: 2em;
+  background-color: rgba(0,0,0,.01);
   a{
     color: white;
   }
