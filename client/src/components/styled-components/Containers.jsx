@@ -109,4 +109,41 @@ export const ButtonDiv = styled.div`
     display: flex;
     justify-content: space-around;
 `
-export default { ButtonDiv, ParentShowBus, InfoContainer, IntroDiv, BusShowContainer, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }
+
+export const SplashImageDiv = styled.div`
+    width: 100vw;
+    height: 80vh;
+    background: url("https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-0.3.5&s=4044d76d9f2de01fd10ddd409543bc7a&auto=format&fit=crop&w=804&q=80");
+    background-size: cover;
+    background-position: bottom; 
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    @media only screen and (max-width: 350px){
+        height: 100vh;
+     }
+`
+export const MissionStatement = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border radius: 4px;
+    background-color: rgba(0, 0, 0, 0.25);
+    p{
+        margin: 30px;
+        font-size: 1.5em;
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+@media only screen and (max-width: 600px){
+   flex-direction: column;
+}
+
+`
+export default {  MissionStatement, SplashImageDiv, ButtonDiv, ParentShowBus, InfoContainer, IntroDiv, BusShowContainer, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }

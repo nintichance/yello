@@ -1,12 +1,30 @@
 import React from 'react'
-import { TrackBuses, InfoContainer, HomeContainer, IntroDiv, FooterDiv } from './styled-components/Containers'
+import { MissionStatement, SplashImageDiv, TrackBuses, InfoContainer, HomeContainer, IntroDiv, FooterDiv } from './styled-components/Containers'
 import HomeNav from './HomeNav'
 import { Link, Redirect } from 'react-router-dom'
-import { BusImage, PostIcon, TrackBusesImage } from './styled-components/Images'
+import { SplashImage, BusImage, PostIcon, TrackBusesImage } from './styled-components/Images'
 const Home = () => {
     return (
         <div>
             <HomeNav />
+            <SplashImageDiv>
+                <MissionStatement>
+                <p>Mission Statement:</p>
+                <p>We are as concerned with
+                the safety and schedule
+                 of your kids as you are!
+                 Add your children's buses
+                 to your profile to track where
+                 your child's schoolbus is.
+                 You no longer have to wait at
+                 the bus stop for 30 minutes as the
+                 bus sits in traffic nor do you need
+                to send your children out in the cold
+                too early in the morning because you'll
+                    always know where the bus is!</p>
+                    </MissionStatement>
+                </SplashImageDiv>
+
             <HomeContainer> 
                 {/* <Link to="/parents">Parents</Link> */}
                 <TrackBuses>

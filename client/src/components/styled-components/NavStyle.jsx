@@ -12,7 +12,8 @@ align-items: center;
 height: 10vh;
 margin-bottom: 25px;
 background-color: #1b1b1b;
-box-shadow: 0 1px 0 0 #1b1b1b;
+// box-shadow: 0 1px 0 0 #1b1b1b;
+box-shadow: 0 0 5px 0 gray;
 z-index: 1;
 a{
     text-decoration: none;
@@ -35,7 +36,7 @@ align-items: center;
 height: 10vh;
 margin-bottom: 25px;
 background-color: #1b1b1b;
-box-shadow: 0 1px 0 0 #1b1b1b   ;
+box-shadow: 0 0 15px 0 black;
 z-index: 1;
 a{
     text-decoration: none;
@@ -53,6 +54,7 @@ export const NavItems = styled.div`
 
 export const FooterSpace = styled.div`
     margin: 25px;
+    z-index: 1;
     @media only screen and (max-width: 600px){
         margin: 15px;
     
@@ -89,6 +91,7 @@ export const FooterStyle = styled.div`
 export const RefreshButton = styled.button`
     background-color: rgba(0, 0, 0, 0.001);
     border-color: rgba(0, 0, 0, 0.001);
+    z-index: 1;
     `
 export const RefreshImage = styled.img`
     width: 60px;
