@@ -46,7 +46,7 @@ export const IntroDiv = styled.div`
 `
 
 export const InfoContainer = styled.div`
-    height: 40vh;
+    height: 50vh;
     width: 100vw;
     background-color: #1b1b1b;
     display: flex;
@@ -54,15 +54,49 @@ export const InfoContainer = styled.div`
     align-items: center;
     p{
         margin: 30px;
-        font-size: 1em;
-       color: #f9a825;
+        font-size: 1.25em;
+       color: white;
 
     }
-
-@media only screen and (max-width: 600px){
-   height: 60vh;
+    @media only screen and (max-width: 1000px){
+        height: 70vh;
+    }
+@media only screen and (max-width: 850px){
+   height: 120vh;
    flex-direction: column;
+   
 }
+@media only screen and (max-width: 530px){
+    height: 130vh;
+    flex-direction: column;
+    
+ }
+ @media only screen and (max-width: 470px){
+    height: 140vh;
+    flex-direction: column; 
+ }
+ @media only screen and (max-width: 400px){
+    height: 170vh;
+    flex-direction: column; 
+ }
+ @media only screen and (max-width: 340px){
+    height: 180vh;
+    flex-direction: column; 
+ }
+ @media only screen and (max-width: 340px){
+    height: 190vh;
+    flex-direction: column; 
+ }
+`
+export const ThreeInfo = styled.div`
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media only screen and (max-width: 850px){
+        width: 90%;
+        
+     }
 `
 
 export const FooterDiv = styled.div`
@@ -146,4 +180,5 @@ export const MissionStatement = styled.div`
 }
 
 `
-export default {  MissionStatement, SplashImageDiv, ButtonDiv, ParentShowBus, InfoContainer, IntroDiv, BusShowContainer, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }
+
+export default {  ThreeInfo, MissionStatement, SplashImageDiv, ButtonDiv, ParentShowBus, InfoContainer, IntroDiv, BusShowContainer, ParentsContainer, MapContainerStyle, HomeContainer, LogOutContainer, DevelopmentContainer }
